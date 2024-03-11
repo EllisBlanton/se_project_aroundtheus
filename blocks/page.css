@@ -1,0 +1,18 @@
+.page {
+  background-color: black;
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.page__content {
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 320px) {
+  .page__content {
+    max-width: 282px;
+  }
+}

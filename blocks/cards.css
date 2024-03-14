@@ -1,8 +1,15 @@
 .cards__list {
   list-style: none;
-  margin: 52px 0;
+  margin: 52px auto;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
   gap: 17px;
+  justify-content: center;
+}
+
+@media screen and (max-width: 600px) {
+  .cards__list {
+    margin: 36px auto;
+  }
 }

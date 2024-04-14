@@ -72,9 +72,10 @@
   height: 50px;
   border: none;
   color: #fff;
-  size: 18px;
+  font-size: 18px;
   line-height: 1.2;
   transition: opacity 0.3s ease;
+  cursor: pointer;
 }
 
 .modal__button:hover {

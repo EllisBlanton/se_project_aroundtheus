@@ -3,6 +3,7 @@
   background-color: #ffffff;
   border-radius: 10px;
   max-height: 362px;
+  position: relative;
 }
 
 .card__image {
@@ -47,5 +48,22 @@
 }
 
 .card__like-button:hover {
+  opacity: 0.5;
+}
+
+.card__delete-button {
+  background: transparent url(../images/trash.svg) center no-repeat;
+  border: none;
+  width: 18px;
+  height: 19.3px;
+  transition: opacity 0.3s ease;
+  padding: 0;
+  cursor: pointer;
+  position: absolute;
+  top: 18px;
+  right: 15px;
+}
+
+.card__delete-button:hover {
   opacity: 0.5;
 }

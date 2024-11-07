@@ -29,6 +29,7 @@ const initialCards = [
 const profileEditButton = document.querySelector("#profile-edit-button");
 const profileEditModal = document.querySelector("#profile-edit-modal");
 const addCardModal = document.querySelector("#add-card-modal");
+const previewImageModal = document.querySelector("#image-modal");
 const profileEditClose = document.querySelector("#profile-edit-close");
 const addCardModalClose = document.querySelector("#add-card-close");
 const profileTitle = document.querySelector(".profile__title");
@@ -43,6 +44,7 @@ const cardTemplate =
 const addNewCardButton = document.querySelector(".profile__add-button");
 const cardTitleInput = addCardForm.querySelector("#card-title-input");
 const cardUrlInput = addCardForm.querySelector("#card-url-input");
+const previewImageClose = document.querySelector("#image-close");
 
 // Functions
 function closeModal(modal) {
@@ -69,6 +71,8 @@ function getCardElement(cardData) {
   const cardTitleEl = cardElement.querySelector(".card__title");
   const likeButton = cardElement.querySelector(".card__like-button");
   const deleteButton = cardElement.querySelector(".card__delete-button");
+  const previewImage = document.querySelector(".modal__image");
+  const previewTitle = document.querySelector(".modal__image_title");
 
   likeButton.addEventListener("click", () => {
     likeButton.classList.toggle("card__like-button_active");
@@ -76,6 +80,13 @@ function getCardElement(cardData) {
 
   deleteButton.addEventListener("click", () => {
     cardElement.remove();
+  });
+
+  cardImageEl.addEventListener("click", () => {
+    openModal(previewImageModal);
+    previewImage.src = cardData.link;
+    previewImage.alt = cardData.name;
+    previewTitle.textContent = cardData.name;
   });
 
   cardImageEl.src = cardData.link;
@@ -112,7 +123,12 @@ profileEditButton.addEventListener("click", () => {
 
 profileEditClose.addEventListener("click", () => closeModal(profileEditModal));
 
+previewImageClose.addEventListener("click", () =>
+  closeModal(previewImageModal)
+);
+
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
+
 addCardForm.addEventListener("submit", handleAddCardSubmit);
 
 // add new card button

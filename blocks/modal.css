@@ -8,11 +8,16 @@
   background-color: rgba(0, 0, 0, 0.5);
   /* display: flex; */
   padding: 0 19px;
-  display: none;
+  visibility: hidden;
+  position: absolute;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.3s linear;
 }
 
 .modal_opened {
   display: flex;
+  visibility: visible;
+  opacity: 1;
 }
 
 .modal__container {
@@ -22,6 +27,24 @@
   border-radius: 10px;
   position: relative;
   max-width: 358px;
+}
+
+.modal__image-container {
+  margin: auto;
+  position: relative;
+}
+
+.modal__image_title {
+  font-size: 12px;
+  line-height: 1.2;
+  margin: 10px 0 0;
+  padding: 0;
+  max-height: 12px;
+}
+
+.modal__image {
+  max-width: 75vh;
+  max-height: 75vh;
 }
 
 .modal__close {

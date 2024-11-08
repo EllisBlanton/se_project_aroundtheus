@@ -9,7 +9,6 @@
   /* display: flex; */
   padding: 0 19px;
   visibility: hidden;
-  position: absolute;
   opacity: 0;
   transition: visibility 0s, opacity 0.3s linear;
 }
@@ -116,5 +115,9 @@
     bottom: calc(100% + 14px);
     width: 26px;
     height: 26px;
+  }
+
+  .modal__image {
+    max-width: 240px;
   }
 }

@@ -48,7 +48,7 @@
           id="profile-edit-close"
         ></button>
         <h2 class="modal__heading">Edit Profile</h2>
-        <form class="modal__form">
+        <form class="modal__form" name="profile-form">
           <input
             type="text"
             name="title"
@@ -75,7 +75,7 @@
       <div class="modal__container">
         <button class="modal__close" type="button" id="add-card-close"></button>
         <h2 class="modal__heading">New Place</h2>
-        <form class="modal__form">
+        <form class="modal__form" name="card-form">
           <input
             type="text"
             name="title"
@@ -100,9 +100,13 @@
     <!-- View Image Modal -->
     <div class="modal" id="image-modal">
       <div class="modal__image-container">
-        <button class="modal__close" type="button" id="image-close"></button>
+        <button
+          class="modal__close modal__close-image"
+          type="button"
+          id="image-close"
+        ></button>
         <img src="" class="modal__image" alt="" />
-        <h3 class="modal__image_title"></h3>
+        <h3 class="modal__image-title"></h3>
       </div>
     </div>
 

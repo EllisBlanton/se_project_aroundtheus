@@ -33,7 +33,7 @@
   position: relative;
 }
 
-.modal__image_title {
+.modal__image-title {
   font-size: 12px;
   line-height: 1.2;
   margin: 10px 0 0;
@@ -118,6 +118,25 @@
   }
 
   .modal__image {
+    max-width: 300px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .modal__image {
     max-width: 240px;
+  }
+
+  .modal__heading {
+    font-size: 18px;
+  }
+
+  .modal__button {
+    font-size: 14px;
+  }
+
+  .modal__close-image {
+    left: calc(100% + 5px);
+    bottom: calc(100% + 5px);
   }
 }

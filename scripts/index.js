@@ -45,14 +45,19 @@ const cardUrlInput = addCardForm.querySelector("#card-url-input");
 const previewImage = document.querySelector(".modal__image");
 const previewTitle = document.querySelector(".modal__image-title");
 const closeButtons = document.querySelectorAll(".modal__close");
+const modalOverlays = document.querySelectorAll(".modal");
 
 // Functions
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
+  modal.removeEventListener("click", closeThroughOverlay);
+  document.removeEventListener("keydown", handleEscKeyPress);
 }
 
 function openModal(modal) {
   modal.classList.add("modal_opened");
+  modal.addEventListener("click", closeThroughOverlay);
+  document.addEventListener("keydown", handleEscKeyPress);
 }
 
 function fillProfileForm() {
@@ -96,6 +101,21 @@ function getCardElement(cardData) {
 function renderCard(cardData, wrapper) {
   const cardElement = getCardElement(cardData);
   wrapper.prepend(cardElement);
+}
+
+function closeThroughOverlay(e) {
+  if (e.target.classList.contains("modal")) {
+    closeModal(e.target);
+  }
+}
+
+function handleEscKeyPress(e) {
+  if (e.key === "Escape") {
+    const modalOpen = document.querySelector(".modal_opened");
+    if (modalOpen) {
+      closeModal(modalOpen);
+    }
+  }
 }
 
 // Event Handlers
